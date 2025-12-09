@@ -161,3 +161,44 @@ thead tr {
 td, th {
     vertical-align: middle;
 }
+
+/*==================================================*/
+/* FORMULARIOS */
+/*==================================================*/
+
+.formulario {
+    width: 50%;
+}
+
+.id-form {
+    background-color: var(--gris-claro);
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.cursor-check {
+    cursor: pointer;
+}
+
+.contenedor-formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.contenedor-boton {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+}
+
+.select-inactivo {
+    background-color: var(--rojo-aviso);
+    color: white;
+}
+
+.select-tematica-actual {
+    background-color: var(--amarillo-logo);
+    color: white;
+}
