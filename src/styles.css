@@ -106,3 +106,58 @@ h2 {
 h3 {
     font-size: 16px;
 }
+
+/*==================================================*/
+/* LISTADOS Y TABLAS */
+/*==================================================*/
+
+.thumb-list-imagen {
+    height: 50px;
+    width: auto;
+    border-radius: 0.5rem;
+    vertical-align: middle;
+}
+
+.contenedor-listado {
+    padding: 1rem;
+}
+
+.contenedor-tabla {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    width: 100%;
+}
+
+table .item-inactivo,
+table .item-noactual {
+    font-size: 1.2rem;
+    color: red;
+    text-align: center;
+}
+
+table .item-activo,
+table .item-actual {
+    font-size: 1.2rem;
+    color: green;
+    text-align: center;
+}
+
+.centrar-activo,
+.centrar-actual,
+.centrar-numero-banners,
+.centrar-portada {
+    text-align: center;
+}
+
+thead tr {
+    border-bottom: 1px solid var(--gris-medio);
+    border-top: 1px solid var(--gris-medio);
+}
+
+td, th {
+    vertical-align: middle;
+}
