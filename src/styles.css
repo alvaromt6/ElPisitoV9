@@ -67,3 +67,42 @@ table {
     --negro: #151515;
     --rojo-aviso: #aa1d1d;
 }
+
+/*==================================================*/
+/* ESTILOS GENERALES - FIRST MOBILE */
+/*==================================================*/
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*==================================================*/
+/* TITULOS */
+/*==================================================*/
+
+h1 {
+    font-size: 20px;
+    padding: 1rem;
+    background-color: var(--gris-claro);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
