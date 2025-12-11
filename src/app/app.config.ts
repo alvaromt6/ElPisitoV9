@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     // Configuración de la detección de cambios de Angular.
     // `eventCoalescing: true` agrupa múltiples eventos en un solo ciclo de detección
     // para mejorar el rendimiento en eventos frecuentes.
-    provideZoneChangeDetection({ eventCoalescing: true }),
+   // provideZoneChangeDetection({ eventCoalescing: true }),
 
     // Proveedor del enrutador con las rutas definidas en app.routes.ts
     provideRouter(routes),
