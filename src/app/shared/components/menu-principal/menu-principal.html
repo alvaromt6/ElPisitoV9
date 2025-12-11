@@ -50,34 +50,37 @@
           </li>
 
 
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAdministracion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Administración
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAdministracion">
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-inmueble">+ Inmueble</a></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-inmueble">Listado de Inmuebles</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-poblacion">+ Población</a></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-poblacion">Listado de Poblaciones</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-provincia">+ Provincia</a></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-provincia">Listado de Provincias</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-tipo">+ Tipo</a></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-tipo">Listado de Tipos</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-operacion">+ Operación</a></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-operacion">Listado de Operaciones</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-usuario">+ Usuario</a></li>
-                <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-usuario">Listado de Usuarios</a></li>
-        
-            </ul>
-          </li>
+          @if( estaLogueado && rol === "[ROLE_ADMIN]" || estaLogueado && rol === "[ROLE_SUPER_ADMIN]" ){
 
-
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAdministracion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Administración
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAdministracion">
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/add-inmueble">+ Inmueble</a></li>
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/admin/list-inmueble">Listado de Inmuebles</a></li>
+                  <li class="dropdown-divider"></li>
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-poblacion">+ Población</a></li>
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-poblacion">Listado de Poblaciones</a></li>
+                  <li class="dropdown-divider"></li>
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-provincia">+ Provincia</a></li>
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-provincia">Listado de Provincias</a></li>
+                  <li class="dropdown-divider"></li>
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-tipo">+ Tipo</a></li>
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-tipo">Listado de Tipos</a></li>
+                  <li class="dropdown-divider"></li>
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-operacion">+ Operación</a></li>
+                  <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-operacion">Listado de Operaciones</a></li>
+                  
+                  @if(rol === "[ROLE_SUPER_ADMIN]"){
+                    <li class="dropdown-divider"></li>
+                    <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/add-usuario">+ Usuario</a></li>
+                    <li><a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item"  routerLink="/admin/list-usuario">Listado de Usuarios</a></li>
+                  }
+              </ul>
+            </li>
+          }
 
         </ul>
 
