@@ -22,7 +22,7 @@
         <ul class="navbar-nav">
             
           <li class="nav-item">
-            <a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-link" aria-current="page" href="#">Home</a>
+            <a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-link" aria-current="page" routerLink="home">Home</a>
           </li>
 
 
@@ -51,8 +51,6 @@
 
 
           @if( estaLogueado && rol === "[ROLE_ADMIN]" || estaLogueado && rol === "[ROLE_SUPER_ADMIN]" ){
-
-            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuAdministracion" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Administración
@@ -81,9 +79,33 @@
               </ul>
             </li>
           }
+          @if(estaLogueado){
+            <li class="nav-item logout">
+              <a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-link" aria-current="page" (click)= logout()>Logout</a>
+            </li>
+          
+            <li class="usuario-icono-nombre">
 
+              @if(rol === "[ROLE_USER]"){
+                <i class="fa-solid fa-user"></i>
+              }@else if(rol === "[ROLE_ADMIN]"){
+                <i class="fa-solid fa-user-gear"></i>
+              }@else if(rol === "[ROLE_SUPER_ADMIN]"){
+                <i class="fa-solid fa-user-tie"></i>
+              }
+
+              <span>{{usuario}}</span>
+            </li>
+          }@else{
+            <li class="nav-item">
+              <a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-link" aria-current="page" routerLink="/registro-usuario">Resgistrate!</a>
+            </li>
+
+            <li class="nav-item">
+              <a  data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="nav-link" aria-current="page" routerLink="/auth/login">Login</a>
+            </li>
+          }
         </ul>
-
       </div>
     </div>
   </nav>
