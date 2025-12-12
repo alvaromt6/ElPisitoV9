@@ -1,8 +1,9 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
 import { routes } from './app.routes';
+import { tokenInterceptor } from './core/interceptors/token-interceptor';
 
 /**
  * Configuración principal de la aplicación Angular.
@@ -20,9 +21,9 @@ export const appConfig: ApplicationConfig = {
 
     // Proveedor del enrutador con las rutas definidas en app.routes.ts
     provideRouter(routes),
-
     // Proveedor del cliente HTTP de Angular.
     // Es obligatorio para poder inyectar HttpClient en servicios y hacer llamadas HTTP.
-    provideHttpClient()
+    provideHttpClient(withInterceptors([tokenInterceptor]))
+    //Para que funcionen los intercptores debemso de declararlos en provideHttpClient
   ]
 };
