@@ -4,6 +4,8 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
 import { routes } from './app.routes';
 import { tokenInterceptor } from './core/interceptors/token-interceptor';
+import { errorInterceptor } from './core/interceptors/error-interceptor';
+
 
 /**
  * Configuración principal de la aplicación Angular.
@@ -23,7 +25,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     // Proveedor del cliente HTTP de Angular.
     // Es obligatorio para poder inyectar HttpClient en servicios y hacer llamadas HTTP.
-    provideHttpClient(withInterceptors([tokenInterceptor]))
+    provideHttpClient(withInterceptors([tokenInterceptor,errorInterceptor]))
     //Para que funcionen los intercptores debemso de declararlos en provideHttpClient
   ]
 };
