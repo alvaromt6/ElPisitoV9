@@ -1,0 +1,56 @@
+<article class="contenedor">
+
+  <!-- Carousel de la ficha del inmueble -->
+  <header class="carousel-ficha">
+    <app-carousel-ficha [datosInmueble]="datos"/>
+  </header>
+
+  <!-- Enlace al detalle del inmueble -->
+  <a class="datos-generales" [routerLink]="['/detail-inmueble', datos.id]">
+    <!-- Cabecera con los datos principales del inmueble -->
+    <header class="cabecera-datos">
+      <h3 class="claim">{{datos.claim}} {{datos.poblacion.nombre | parentesis}}</h3>
+      <p class="precio">{{datos.precio | euros}}</p>
+      <p class="descripcion">{{datos.descripcion}}</p>
+    </header>
+
+    <!-- Footer con iconos e información adicional del inmueble -->
+    <footer class="footer-datos">
+      <div class="iconos">
+        <!-- Información sobre los baños -->
+        <div class="icono">
+          <span>{{datos.banhos}}</span>
+          <img src="assets/img/004-bathtub.svg" alt="icono número de baños">
+        </div>
+        <!-- Información sobre las habitaciones -->
+        <div class="icono">
+          <span>{{datos.habitaciones}}</span>
+          <img src="assets/img/017-bed.svg" alt="icono número de habitaciones">
+        </div>
+        <!-- Información sobre la planta del inmueble -->
+        <div class="icono">
+          <span>{{datos.planta}}</span>
+          <img src="assets/img/011-office building.svg" alt="icono planta del inmueble">
+        </div>
+        <!-- Información sobre la superficie construida -->
+        <div class="icono">
+          <span>{{datos.superficieConstruida}} m2</span>
+          <img src="assets/img/008-house plan.svg" alt="icono superficie del inmueble">
+        </div>
+      </div>
+    </footer>
+
+  </a>
+
+  <!-- El siguiente bloque muestra el botón de administración solo si el usuario está logueado y tiene rol de administrador -->
+  <!-- Este bloque es condicional, depende de los datos de usuario y su rol -->
+  @if((datosUsuario.logueado && datosUsuario.rol === "[ROLE_ADMIN]") || (datosUsuario.logueado && datosUsuario.rol === "[ROLE_SUPER_ADMIN]")){
+    <app-boton-admin class="boton-admin" [idInmueble]="datos.id!" />
+  } 
+
+  <!-- Corazón de favoritos: solo se activa si el usuario está logueado -->
+  <!-- Si el usuario no está logueado, al hacer clic lo redirige a la página de login -->
+  <!-- La exclamación (!) significa que el dato no será null ni undefined -->
+  <app-corazon-favoritos [idInmueble]="datos.id!" class="corazon-favoritos"></app-corazon-favoritos>
+
+</article>
