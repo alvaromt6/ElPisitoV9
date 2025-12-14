@@ -1,14 +1,46 @@
-// Archivo para declarar todas las entidades de la aplicación
-// Esto facilita la gestión y el mantenimiento del código
-// al centralizar las definiciones de las entidades en un solo lugar.
-
 export interface Inmobiliaria {
     id?: number;
     nombre: string;
-    telefono: string;
     representante: string;
-    log?: string;
+    telefono: string;
     activo?: number;
+    logo?: string;
+}
+
+export interface Inmueble {
+    id?: number;
+    activo?: number;
+    amueblado: number;
+    apertura: string;
+    ascensor: number;
+    balcones: string;
+    banhos: string;
+    calefaccion: string;
+    claim: string;
+    descripcion: string;
+    gadget: number;
+    garajes: string;
+    habitaciones: string;
+    inmobiliaria: Inmobiliaria;
+    imagenes: Array<ImagenInmueble>;
+    jardin: number;
+    nombreVia: string;
+    numero: string;
+    operacion: Operacion;
+    oportunidad: number;
+    orientacion: string;
+    piscina: number;
+    planta: string;
+    poblacion: Poblacion;
+    portada: number;
+    precio: number;
+    puerta: string;
+    superficieConstruida: number;
+    superficieUtil: number;
+    tendedero: number;
+    tipo: Tipo;
+    trastero: number;
+    via: string;
 }
 
 export interface Tipo {
@@ -19,7 +51,6 @@ export interface Tipo {
 
 export interface Poblacion {
     id?: number;
-    cp: string;
     nombre: string;
     provincia: Provincia;
     activo?: number;
@@ -34,14 +65,12 @@ export interface Provincia {
 export interface ImagenInmueble {
     id?: number;
     nombre: string;
-    altImagen?: string;
-    activo?: number;
-    inmueble?: Inmueble;
+    altImagen: string;
 }
 
 export interface Operacion {
     id?: number;
-    nombre: string; // venta, alquiler…
+    nombre: string;
     activo?: number;
 }
 
@@ -52,54 +81,4 @@ export interface Usuario {
     email: string;
     rol?: string;
     activo?: number;
-    inmueblesFavoritos?: Inmueble[];
-}
-
-export interface Inmueble {
-    id?: number;
-
-    via: string;                         // CALLE, AVENIDA, PLAZA…
-    nombreVia: string;                   // Ej: Gran Vía
-    claim: string;                       // "Maravilloso piso!!!"
-    numero: string;
-    planta: string;
-    puerta: string;
-    apertura: string;                    // INTERIOR, EXTERIOR
-    orientacion: string;                 // norte, sur…
-
-    superficieUtil: number;
-    superficieConstruida: number;
-
-    precio: number;
-
-    habitaciones: string;
-    banhos: string;
-
-    descripcion: string;
-
-    calefaccion: string;
-    amueblado: number;                   // 1 o 0
-    balcones: string;
-    garajes: string;
-
-    piscina: number;                     // 1 o 0
-    trastero: number;
-    ascensor: number;
-    jardin: number;
-    tendedero: number;
-
-    portada: number;                     // 1 o 0
-    oportunidad: number;                 // 1 o 0
-    gadget: number;
-
-    activo: number;
-
-    tipo: Tipo;
-    poblacion: Poblacion;
-    operacion: Operacion;
-    inmobiliaria: Inmobiliaria;
-
-    imagenes?: ImagenInmueble[];
-
-    usuariosQueLoFavorean?: Usuario[];
 }
