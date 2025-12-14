@@ -1,1 +1,8 @@
-<p>list-inmuebles-portada works!</p>
+@if(cargaCompletada){
+    @for( inmueble of inmuebles; track inmueble.id ){
+        <app-ficha-inmueble [datosUsuario]="datosUsuarioYEstado" [datos]="inmueble"></app-ficha-inmueble>
+    }
+}@else {
+
+    <app-preloader></app-preloader>
+}
