@@ -109,4 +109,20 @@ export class AuthService {
     }
     return 'El usuario no está logueado';
   }
+
+  //Devuelve el id del usuario según el token.
+  getIdUsuarioFromToken():number{
+    this.token = this.getTokenFromLocalStorage();
+
+    if (this.token) {
+      try {
+        const decoded: CustomJwtPayload = jwtDecode(this.token);
+        return decoded.ID;
+      } catch (error) {
+        return 0;
+      }
+    }
+    return 0;
+
+  }
 }
