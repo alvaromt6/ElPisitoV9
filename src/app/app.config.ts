@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
 import { routes } from './app.routes';
@@ -22,7 +22,9 @@ export const appConfig: ApplicationConfig = {
    // provideZoneChangeDetection({ eventCoalescing: true }),
 
     // Proveedor del enrutador con las rutas definidas en app.routes.ts
-    provideRouter(routes),
+    //withInMemoryScrolling -> Esto hace que al navegar entre rutas, la posición de desplazamiento
+    //se restaure automáticamente al inicio de la página (parte superior).
+    provideRouter(routes,withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
     // Proveedor del cliente HTTP de Angular.
     // Es obligatorio para poder inyectar HttpClient en servicios y hacer llamadas HTTP.
     provideHttpClient(withInterceptors([tokenInterceptor,errorInterceptor]))
