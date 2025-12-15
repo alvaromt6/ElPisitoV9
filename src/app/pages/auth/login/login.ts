@@ -33,7 +33,7 @@ export class Login {
 
     login(): void {
         if (this.loginForm.valid) {
-            this.credenciales.username = this.loginForm.get("elEmail")?.value || "";
+            this.credenciales.username = this.loginForm.get("elUsuario")?.value || "";
             this.credenciales.password = this.loginForm.get("elPassword")?.value || "";
         }
 
