@@ -1,7 +1,12 @@
 <section class="contenedor">
 
-<img src="assets/img/error.png">
-<span class="numero-error">{{status}}</span>
-<span class="mensaje-error">{{message}}</span>
+    <img src="assets/img/error.png">
+    <span class="numero-error">{{status}}</span>
+    <span class="mensaje-error">{{message}}</span>
+
+    @if (status === 401) {
+        <button type="button" class="btn btn-primary" (click)="login()">Iniciar sesión</button>
+    }
+
 
 </section>
