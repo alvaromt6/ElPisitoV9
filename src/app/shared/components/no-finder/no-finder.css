@@ -14,7 +14,15 @@ img {
 }
 
 .mensaje {
+    width: 80%;
+}
+
+.contenedor-datos {
+    width: 80%;
+    background-color: var(--gris-claro);
+    padding: 1rem;
     margin-top: 1rem;
+    border-radius: 0.8rem;
 }
 
 /* ================================================= */

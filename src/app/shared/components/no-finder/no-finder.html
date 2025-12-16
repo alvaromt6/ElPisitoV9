@@ -1,4 +1,21 @@
 <section class="contenedor">
-    <img src="assets/img/no-fav-finder.jpg" />
-    <span class="mensaje">No existe ningún inmueble con esos criterios de búsqueda</span>
+
+    @if (cargaCompletada) {
+
+        <img src="assets/img/no-fav-finder.jpg" />
+
+        <p class="mensaje">No existe ningún inmueble con los siguientes criterios de búsqueda:</p>
+
+        <div class="contenedor-datos">
+            <p>TIPO INMUEBLE: {{ tipo.nombre }}</p>
+            <p>POBLACIÓN: {{ poblacion.nombre }}</p>
+            <p>OPERACIÓN: {{ operacion.nombre }}</p>
+        </div>
+
+    } @else {
+
+        <app-preloader></app-preloader>
+
+    }
+
 </section>
