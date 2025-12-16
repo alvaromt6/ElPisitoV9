@@ -16,3 +16,9 @@ export interface UsuarioDataYState{
     id?: number;
     rol?: string;
 }
+
+export interface FinderData{
+    idTipo: number;
+    idPoblacion: number;
+    idOperacion: number;
+}
