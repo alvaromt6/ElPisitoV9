@@ -1,0 +1,33 @@
+/* ================================================= */
+/* FIRST MOBILE */
+/* ================================================= */
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* ================================================= */
+/* MEDIA QUERIES */
+/* ================================================= */
+
+/* MAYOR O IGUAL DE 576PX (A PARTIR DE 575PX INCLUSIVE) - SMARTPHONES */
+@media only screen and (min-width: 576px) {
+    /* Aquí puedes agregar las reglas CSS específicas para dispositivos de más de 575px */
+}
+
+/* MAYOR O IGUAL DE 768PX (A PARTIR DE 768PX INCLUSIVE) - SMARTPHONES GRANDES, TABLETS */
+@media only screen and (min-width: 768px) {
+    /* Aquí puedes agregar las reglas CSS específicas para dispositivos de más de 767px */
+}
+
+/* MAYOR O IGUAL DE 992PX (A PARTIR DE 992PX INCLUSIVE) - PC PEQUEÑOS, LAPTOPS */
+@media only screen and (min-width: 992px) {
+    /* Aquí puedes agregar las reglas CSS específicas para dispositivos de más de 991px */
+}
+
+/* MAYOR O IGUAL DE 1200PX (A PARTIR DE 1200PX INCLUSIVE) - PC GRANDES, TELEVISIONES */
+@media only screen and (min-width: 1200px) {
+    /* Aquí puedes agregar las reglas CSS específicas para dispositivos de más de 1199px */
+}

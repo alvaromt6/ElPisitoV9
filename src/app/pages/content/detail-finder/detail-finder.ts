@@ -2,10 +2,11 @@ import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { FinderData } from '../../../core/models/auxiliars';
+import { ListInmueblesFinder } from "../../../shared/components/list-inmuebles-finder/list-inmuebles-finder";
 
 @Component({
   selector: 'app-detail-finder',
-  imports: [],
+  imports: [ListInmueblesFinder],
   templateUrl: './detail-finder.html',
   styleUrl: './detail-finder.css',
 })

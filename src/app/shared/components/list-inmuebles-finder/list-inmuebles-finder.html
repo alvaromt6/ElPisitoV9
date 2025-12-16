@@ -1,0 +1,26 @@
+<section class="contenedor">
+
+    @if (cargaCompletada) {
+
+        <!-- <app-contenedor-banners [dondeEstoy]="'listInmuebleFinder'" /> -->
+         <app-contenedor-banners></app-contenedor-banners>
+
+        @if (inmuebles.length > 0) {
+
+            @for (inmueble of inmuebles; track inmueble.id) {
+                <app-ficha-inmueble [datosUsuario]="datosUsuarioYEstado" [datos]="inmueble" />
+            }
+
+        } @else {
+
+            <app-no-finder />
+
+        }
+
+    } @else {
+
+        <app-preloader />
+
+    }
+
+</section>
