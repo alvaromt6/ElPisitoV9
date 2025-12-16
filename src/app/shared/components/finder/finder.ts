@@ -24,6 +24,7 @@ export class Finder implements OnInit {
   private _poblacionService: PoblacionService = inject(PoblacionService);
   private _operacionService: OperacionService = inject(OperacionService);
   private _router: Router = inject(Router);
+    private _cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
 
   tipos: Array<Tipo>;
   poblaciones: Array<Poblacion>;
@@ -75,6 +76,7 @@ export class Finder implements OnInit {
 
     if (this.fasesCargadas == this.nFases) {
       this.cargaCompletada = true;
+      this._cdr.detectChanges();
     }
   }
   ///////////////////////////////////////////////////////

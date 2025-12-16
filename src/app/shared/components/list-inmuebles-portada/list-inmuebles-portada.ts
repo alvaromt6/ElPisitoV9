@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { InmuebleService } from '../../../core/services/inmueble-service';
 import { Inmueble } from '../../../core/models/entities';
 import { FichaInmueble } from "../ficha-inmueble/ficha-inmueble";
@@ -31,6 +31,7 @@ export class ListInmueblesPortada implements OnInit {
   private _comunicacionService: ComunicacionService = inject(ComunicacionService);
   private _authService: AuthService = inject(AuthService);
   private _inmuebleService: InmuebleService = inject(InmuebleService);
+  private _cdr: ChangeDetectorRef = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
 
@@ -71,6 +72,7 @@ export class ListInmueblesPortada implements OnInit {
     if(this.fasesCargadas == this.nFases){
 
       this.cargaCompletada = true;
+      this._cdr.detectChanges();
     }
   }
   //////////////////////////////////////////////////////
