@@ -1,5 +1,6 @@
 import { ConsultaHipotecas } from "./consulta-hipotecas/consulta-hipotecas";
 import { Contactar } from "./contactar/contactar";
+import { DetailFinder } from "./detail-finder/detail-finder";
 import { Home } from "./home/home";
 import { MapaWeb } from "./mapa-web/mapa-web";
 import { NuestrosServicios } from "./nuestros-servicios/nuestros-servicios";
@@ -44,6 +45,10 @@ export const CONTENT_ROUTES = [
     {
         path:'registro-usuario',
         component: RegistroUsuario
+    },
+    {
+        path:'detail-finder/:idTipo/:idPoblacion/:idOperacion',
+        component: DetailFinder
     },
     
     
