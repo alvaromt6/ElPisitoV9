@@ -1,3 +1,4 @@
+import { Component } from "@angular/core";
 import { ConsultaHipotecas } from "./consulta-hipotecas/consulta-hipotecas";
 import { Contactar } from "./contactar/contactar";
 import { DetailFinder } from "./detail-finder/detail-finder";
@@ -7,6 +8,9 @@ import { NuestrosServicios } from "./nuestros-servicios/nuestros-servicios";
 import { PublicaTuAnuncio } from "./publica-tu-anuncio/publica-tu-anuncio";
 import { RegistroUsuario } from "./registro-usuario/registro-usuario";
 import { SobreElPisito } from "./sobre-el-pisito/sobre-el-pisito";
+import { DetailInmueble } from "./detail-inmueble/detail-inmueble";
+import { DetailFavorito } from "./detail-favorito/detail-favorito";
+import { DetailInmobiliaria } from "./detail-inmobiliaria/detail-inmobiliaria";
 
 export const CONTENT_ROUTES = [
 
@@ -49,6 +53,18 @@ export const CONTENT_ROUTES = [
     {
         path:'detail-finder/:idTipo/:idPoblacion/:idOperacion',
         component: DetailFinder
+    },
+    {
+        path:'detail-inmueble/:idInmueble',
+        component: DetailInmueble
+    },
+    {
+        path:'detail-inmobiliaria/:idInmobiliaria',
+        component: DetailInmobiliaria
+    },
+    {
+        path:'detail-favoritos',
+        component: DetailFavorito
     },
     
     
