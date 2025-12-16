@@ -15,10 +15,13 @@ import { MinusculasPipe } from "../../../shared/pipes/minusculas-pipe";
 import { AmuebladoPipe } from "../../../shared/pipes/amueblado-pipe";
 import { PlazasPipe } from "../../../shared/pipes/plazas-pipe";
 import { SiNoPipe } from "../../../shared/pipes/si-no-pipe";
+import { CarouselFicha } from "../../../shared/components/carousel-ficha/carousel-ficha";
+import { CorazonFavoritos } from "../../../shared/components/corazon-favoritos/corazon-favoritos";
+import { BotonAdmin } from "../../../shared/components/boton-admin/boton-admin";
 
 @Component({
   selector: 'app-detail-inmueble',
-  imports: [Preloader, ParentesisPipe, EurosPipe, MetrosCuadradosPipe, MinusculasPipe, AmuebladoPipe, PlazasPipe, SiNoPipe],
+  imports: [Preloader, ParentesisPipe, EurosPipe, MetrosCuadradosPipe, MinusculasPipe, AmuebladoPipe, PlazasPipe, SiNoPipe, CarouselFicha, CorazonFavoritos, BotonAdmin],
   templateUrl: './detail-inmueble.html',
   styleUrl: './detail-inmueble.css',
 })
@@ -42,7 +45,6 @@ export class DetailInmueble implements OnInit, OnDestroy {
   suscripcion2: Subscription;
   datos: Inmueble;
   urlImagen: string = URL_IMAGEN_INMUEBLE;
-  /* banners:Array<BannerHorizontal> = []; */
 
   datosUsuarioYEstado: UsuarioDataYState = {};
 

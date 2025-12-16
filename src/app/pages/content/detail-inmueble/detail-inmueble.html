@@ -7,7 +7,7 @@
 
 
         <div class="carousel-ficha">
-            <!-- <app-carousel-ficha [datosInmueble]="datos"/> -->
+            <app-carousel-ficha [datosInmueble]="datos"/>
         </div>
 
         <h1 class="titular-detalle">{{datos.claim}} en {{datos.poblacion.nombre | parentesis}}</h1>
@@ -115,6 +115,18 @@
 
 
         </div>
+    <!-- El siguiente bloque muestra el botón de administración solo si el usuario está logueado y tiene rol de administrador -->
+    <!-- Este bloque es condicional, depende de los datos de usuario y su rol -->
+    @if((datosUsuarioYEstado.logueado && datosUsuarioYEstado.rol === "[ROLE_ADMIN]") || 
+        (datosUsuarioYEstado.logueado && datosUsuarioYEstado.rol === "[ROLE_SUPER_ADMIN]")
+    ){
+        <app-boton-admin class="boton-admin" [idInmueble]="datos.id!" />
+    } 
+
+    <!-- Corazón de favoritos: solo se activa si el usuario está logueado -->
+    <!-- Si el usuario no está logueado, al hacer clic lo redirige a la página de login -->
+    <!-- La exclamación (!) significa que el dato no será null ni undefined -->
+    <app-corazon-favoritos [idInmueble]="datos.id!" class="corazon-favoritos"></app-corazon-favoritos>
 
 
     </section>
