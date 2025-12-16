@@ -34,7 +34,7 @@ export class ListInmueblesFinder implements OnInit, OnDestroy {
   inmuebles: Array<Inmueble>;
   suscripcion: Subscription;
 
-  datosUsuarioYEstado: UsuarioDataYState;
+  datosUsuarioYEstado: UsuarioDataYState = {};
 
   ngOnInit(): void {
     this.suscripcion = this._comunicacionService.estadoLogin$.subscribe({
