@@ -21,6 +21,7 @@ import { ListPoblacion } from "./list-poblacion/list-poblacion";
 import { ListProvincia } from "./list-provincia/list-provincia";
 import { ListTipo } from "./list-tipo/list-tipo";
 import { ListUsuario } from "./list-usuario/list-usuario";
+import { EditImagenInmueble } from "./edit-imagen-inmueble/edit-imagen-inmueble";
 
 export const ADMIN_ROUTES = [
         /////////////////////////////////
@@ -155,7 +156,7 @@ export const ADMIN_ROUTES = [
         /////////////////////////////////
     {
        path: 'edit-imagen-inmueble/:id',
-       redirectTo: 'list-edit-imagen-inmueble',
+       component: EditImagenInmueble,
        canActivate:[adminGuard]
     }
 ];
