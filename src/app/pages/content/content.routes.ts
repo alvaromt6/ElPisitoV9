@@ -55,11 +55,11 @@ export const CONTENT_ROUTES = [
         component: DetailFinder
     },
     {
-        path:'detail-inmueble/:idInmueble',
-        component: DetailInmueble
+        path:'detail-inmueble/:id', // next: (params) => { this.id = params['id'] }
+        component: DetailInmueble   // en la ruta lo tenemos que llamar id ya que DetailInmueble lo espera así
     },
     {
-        path:'detail-inmobiliaria/:idInmobiliaria',
+        path:'detail-inmobiliaria/:id',
         component: DetailInmobiliaria
     },
     {

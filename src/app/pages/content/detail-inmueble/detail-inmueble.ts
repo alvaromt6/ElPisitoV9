@@ -66,10 +66,7 @@ export class DetailInmueble implements OnInit, OnDestroy {
 
     this.suscripcion = this._route.params.subscribe({
 
-      next: (params) => { this.id = params['id'] }
-      ,
-      error: (error) => { this._router.navigate(["/error"]) }
-
+      next: (params) => { this.id = params['id'] } // en la ruta lo tenemos que llamar id
 
     }); //Observable Hot. Es necesario darle un tratamiento de destrucción cuando el componente se desmonte
 
